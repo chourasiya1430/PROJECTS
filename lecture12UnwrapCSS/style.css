@@ -1,0 +1,89 @@
+/* jbnbhi kuch bhi kabhi bhi website banao y universal selector wali line hamesha likhna */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+     overflow-x: hidden;    /* hame pata h hum x m scroll nhi krenge islie overflow-x: hidden; kiya hai  */
+     overflow-y: auto;      /* hame pata h hame y m scroll krna h islie hamne overflow-y: auto; kiya hai  */
+  
+}
+.container{
+    height: 100%;          
+   max-width: 1200px;     /* max-width: matlb jyada se jyada hamara container 1200px le skta h ,usse jyda lene ki kosis krenge to overflow kr dega  */
+     margin: 0 auto;      /*margin: 0 auto ; se jo bhi hamara container ka content rahega vo bich m rahega */
+    padding: 20px;
+    gap: 1px;
+}
+
+.container h1{ 
+    color: rgb(0, 0, 0);
+    margin: 20px 0;        /*top and bottom se 20px lega or left and right se 0 lega  */
+   text-align: center;   /*  hame heading ko bich m lana h islie hamne text align center kiyA */
+    margin-bottom: 20px;   
+    font-size: 3rem ;
+}
+
+
+.gallery{
+     display: flex;              /*islie kiya kyuki hamari jo images h usko hame horizontally placed krna hai or hame flex properties ka use krna h islie kiya  */
+     flex-wrap: wrap;           /*   islie kiya kyuki hum chahte h ki horizontally item placed na ho to niche ki or gire islie kiya  */
+     justify-content: space-evenly;   /* hame gap chahie sari images k bich m islie kiya  */
+}
+
+.card{
+     width: 31%;           /* width 32% islie di kyuki hame 3 image 1 row m chahie or hame space bhi chahie images k bich m to ,hame pata h width 100% hoti h viewport ki ,or hame 3 image place krna h to 3*32=96% lelegi hamari images or jo baki 4%h vo hamne gap k lie choda h. */
+     position: relative;    /* agar mujhe parent k child ko absolute banana h to parent ko relative banana hoga  */
+    margin-bottom: 20px;
+    border-radius: 10px;
+     overflow: hidden;        /* kuch bhi overflow: ho raha hoga to iss property se nahi hoga ; */
+}
+
+.card img{
+     width: 100%;   /*y width and height y parent ki height width jo hogi uski 100% milegi height and width: ; */
+     height: 100%;         /* height lagane se hame border radius show hone lagi,kyuki jo iska parent h card usko hamne border radius de rakhi h   */
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+
+ .card:hover{
+    transform: scale(1.03);
+    transition: 0.6s;
+    filter: drop-shadow(0 0 10px #333  );
+} 
+
+.card:hover img{
+    filter: grayscale(0%);
+}
+
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    
+    font-size: 16px;
+    font-weight: 500px;
+    color: white;
+    opacity: 0;
+    
+
+}
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.04);
+    transition: 1s;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+
+/* y mujhe krna tha islie kiya babbar ka uper tk hi tha  */
+body{
+    border-left: 100px solid black;
+    border-right: 100px solid black;
+}
